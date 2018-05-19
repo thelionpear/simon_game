@@ -2,12 +2,27 @@
     background-color: black; 
 }
 
+.play_button {
+    display: flex; 
+    justify-content: center; 
+    margin-bottom: 25px; 
+}
+
+button {
+    width: 200px;
+    height: 50px; 
+    display: flex; 
+    justify-content: center; 
+    color: white; 
+    border-radius: 30px; 
+    border: 3px solid white; 
+}
 
 .header {
     display: flex; 
     justify-content: center; 
     border: 1px solid white; 
-    margin-bottom: 100px; 
+    margin-bottom: 75px; 
     color: white; 
 }
 

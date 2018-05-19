@@ -9,27 +9,31 @@ $(document).ready( function() {
 
     var arrayColors = ["red", "blue", "yellow", "green"];
     var computerArray = [];
+    var userArray = [];
     addEventsToButtons();
-    addToComputerArray();
 //need a function that lights up the buttons 
     
     //function that turns off the buttons 
    
     //generates the computer's color array 
     
-   
-
+    $("#play").click(function() {
+        computerArray = [];
+        playGame();
+    })
+    
 
     function addToComputerArray() {
         var randomColor = arrayColors[Math.floor(Math.random() * arrayColors.length)];
         computerArray.push(randomColor); 
-        playGame(); 
     }
 
     //lights up buttons based on the computer array
+   
 
 
     function playGame() {
+        addToComputerArray();
         var time = 0;
         computerArray.forEach(function (color) {
             setTimeout(function() { 
@@ -69,10 +73,9 @@ $(document).ready( function() {
         $("." + buttonName).addClass("opacity"); 
         
     }    
-    //adds one to the computer array each time 
 
     //takes what the user does into an array 
-    var userArray = []
+  
 
     function addEventsToButtons() {
         $(".red_button").click(function() {
@@ -114,8 +117,7 @@ $(document).ready( function() {
         // userArray.push("green");
         // break; 
         userComputerCompare() 
-    }
-//let's the user submit their choices 
+    } 
 
 //compares what the computer did and what the user did 
     function userComputerCompare() {
@@ -133,13 +135,12 @@ $(document).ready( function() {
         if (inputCorrect) {
             if (userArray.length == computerArray.length) {
                 userArray = [] 
-                addToComputerArray() 
+                setTimeout(function() { 
+                    playGame(); 
+                }, 2000);
             }
         }
     }
-
-//takes the comparison and displays if you got it or not 
-
 //tracks a user and their high score 
 
 // var colors = ['.red_button', '.blue_button', '.yellow_button', '.green_button']
