@@ -33,22 +33,22 @@ $(document).ready( function() {
         var time = 0;
         computerArray.forEach(function (color) {
             setTimeout(function() { 
-                switch(color) {
-                    case "red": 
-                    lightUp("red_button");
-                    break;
-                    case "blue": 
-                    lightUp("blue_button");
-                    break;
-                    case "yellow":
-                    lightUp("yellow_button");
-                    break; 
-                    case "green": 
-                    lightUp("green_button");
-                    break; 
-                }
+                lightUp(color + "_button");
+                // switch(color) {
+                //     case "red": 
+                //     lightUp("red_button");
+                //     break;
+                //     case "blue": 
+                //     lightUp("blue_button");
+                //     break;
+                //     case "yellow":
+                //     lightUp("yellow_button");
+                //     break; 
+                //     case "green": 
+                //     lightUp("green_button");
+                //     break; 
             }, time);
-            time += 1000;  
+            time += 1500;  
         })
     }
 
@@ -67,6 +67,7 @@ $(document).ready( function() {
     function lightOff(buttonName) {
         $("." + buttonName).removeClass("notOpaque");
         $("." + buttonName).addClass("opacity"); 
+        
     }    
     //adds one to the computer array each time 
 
@@ -98,20 +99,20 @@ $(document).ready( function() {
     }
 
     function createUserArray(choice) {
-        switch(choice) {
-        case "red": 
-        userArray.push("red");
-        break; 
-        case "yellow": 
-        userArray.push("yellow")
-        break; 
-        case "blue": 
-        userArray.push("blue")
-        break; 
-        case "green":
-        userArray.push("green");
-        break; 
-        }
+        userArray.push(choice);
+        // switch(choice) {
+        // case "red": 
+        // userArray.push("red");
+        // break; 
+        // case "yellow": 
+        // userArray.push("yellow")
+        // break; 
+        // case "blue": 
+        // userArray.push("blue")
+        // break; 
+        // case "green":
+        // userArray.push("green");
+        // break; 
         userComputerCompare() 
     }
 //let's the user submit their choices 
