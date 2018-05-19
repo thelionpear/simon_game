@@ -10,6 +10,7 @@ $(document).ready( function() {
     var arrayColors = ["red", "blue", "yellow", "green"];
     var computerArray = [];
     var userArray = [];
+    var userScore = 0
     addEventsToButtons();
 //need a function that lights up the buttons 
     
@@ -135,12 +136,14 @@ $(document).ready( function() {
         if (inputCorrect) {
             if (userArray.length == computerArray.length) {
                 userArray = [] 
+                userScore++ 
+                    $(".Score").text("Score:" + " " + userScore)
                 setTimeout(function() { 
                     playGame(); 
                 }, 2000);
+                }
             }
         }
-    }
 //tracks a user and their high score 
 
 // var colors = ['.red_button', '.blue_button', '.yellow_button', '.green_button']
